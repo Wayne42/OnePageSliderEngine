@@ -1,5 +1,5 @@
 # OnePageSliderEngine
-Simple "OnePageSliderEffect" Design/Engine with Javascript (jQuery)
+Simple "OnePageSliderEffect" Design/Engine with CSS3 Transitions and Javascript (jQuery)
 
 For Demo visit http://waynedesigns.de/webpages/OnePageSliderEngine
 
