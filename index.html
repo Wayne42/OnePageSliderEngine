@@ -1,0 +1,200 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simple One Page Slider Effect</title>
+
+<style>
+	*{margin:0;padding:0;}
+	body{background: fixed radial-gradient(orange, purple);}
+	header{width: 100vw;position:fixed;border-bottom: 1px solid rgba(0,0,0,0.42);font-family:Verdana;font-size:20px;background:rgba(255,255,255,0.42);}
+	p{}
+	nav{
+		display: flex;
+		width: auto;
+		height: 4em;
+		justify-content: center;
+	}
+	nav ul{
+		list-style-type: none;
+	}
+	nav li{
+		float:left;
+		margin: 0 1em;
+		background: rgba(27,27,27,0.8);
+		color: white;
+		padding-top: 1em;
+	}
+	nav li a{
+		display:block;
+		height: 3em;
+		cursor: pointer;
+	}
+	nav li:hover{
+		background:rgba(27,27,27,0.1);
+		color: black;
+	}
+	#startContent, #leftContent,#rightContent,#bottomContent{
+		position: fixed;
+		padding: 10% 0;
+		text-align: center;
+		width: 100vw;
+		height: 100vh;
+		color: black;
+		font-size:2em;
+		/*transitionspeed of the slides*/
+		transition: all 0.5s;
+		z-index: -1;
+		visibility: hidden;
+	}
+	#startContent{
+		background: rgba(155,155,155,0.5);
+		visibility: visible;
+	}
+	#leftContent{
+		background: rgba(255,0,0,0.5);
+		margin-left:-105vw;
+	}
+	#rightContent{
+		background: rgba(0,255,0,0.5);
+		margin-left:210vw;
+	}
+	#bottomContent{
+		background: rgba(0,0,255,0.5);
+		margin-bottom:-105vh;
+	}
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+//button functions
+var boolStart = 1;
+function startHandler(){
+	if(boolStart==0){
+		reset();
+		$('#startContent').css({"visibility" : "visible", "margin" : "0"});
+		boolStart=1;
+	}
+	else{
+		startHider();
+	}
+}
+
+var boolLeft = 0;
+function leftHandler(){
+	if(boolLeft==0){
+		reset();
+		$('#leftContent').css({"visibility" : "visible", "margin" : "0"});
+		boolLeft=1;
+	}
+	else{
+		leftHider();
+	}
+}
+	
+var boolRight = 0;
+function rightHandler(){
+	if(boolRight==0){
+		reset();
+		$('#rightContent').css({"visibility" : "visible", "margin" : "0"});
+		boolRight=1;
+	}
+	else{
+		rightHider();
+	}
+}	
+	
+var boolBottom = 0;
+function bottomHandler(){
+	if(boolBottom==0){
+		reset();
+		$('#bottomContent').css({"visibility" : "visible", "margin" : "0"});
+		boolBottom=1;
+	}
+	else{
+		bottomHider();
+	}
+}	
+
+//check whats visible, then hide it
+function reset(){
+	if(boolStart==1){startHider()};
+	if(boolLeft==1){leftHider()};
+	if(boolRight==1){rightHider()};
+	if(boolBottom==1){bottomHider()};
+}
+
+//hide functions
+function startHider(){
+		$('#startContent').css({"visibility" : "hidden", "margin" : "-205vh 0 0 0"});
+		boolStart=0;
+}
+function leftHider(){
+		$('#leftContent').css({"visibility" : "hidden", "margin" : "0 0 0 -105vw"});
+		boolLeft=0;
+}
+function rightHider(){
+		$('#rightContent').css({"visibility" : "hidden", "margin" : "0 0 0 210vw"});
+		boolRight=0;
+}
+function bottomHider(){
+		$('#bottomContent').css({"visibility" : "hidden", "margin" : "105vh 0 0 0"});
+		boolBottom=0;
+}
+
+</script>
+</head>
+
+<body>
+<header>
+		<nav>
+			<ul>
+
+				<li>
+					<a onclick="startHandler()">StartSlide</a>
+				</li>
+
+				<li>
+					<a onclick="leftHandler()">LeftSlide</a>
+				</li>
+
+				<li>
+					<a onclick="rightHandler()">RightSlide</a>
+				</li>
+
+				<li>
+					<a onclick="bottomHandler()">BottomSlide</a>
+				</li>
+
+			</ul>
+		</nav>
+</header>
+
+
+<div id="startContent"><div class="content">
+<h1>Start Slide</h1> <br><br>
+<p>„...do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with my name printed on it? Do you see a little Asian child with a blank expression on his face sitting outside on a mechanical helicopter that shakes when you put quarters in it? No? Well, that's what you see at a toy store. And you must think you're in a toy store, because you're here shopping for an infant named Jeb.“</p>
+</div>
+</div>
+
+<div id="leftContent"><div class="content">
+<h2>Left Slide</h2> <br><br>
+<p>„Dawg izzle own yo' away arcu ghetto aliquizzle. Quisque we gonna chung. Sizzle funky fresh ante. Mofo leo dizzle, sure izzle, crackalackin sizzle, euismizzle uhuh ... yih!, tellivizzle. Vestibulum tellivizzle. Dope vehicula owned leo. Quisque vulputate, we gonna chung a ass vulputate, ass uhuh ... yih! commodo tellizzle, in eleifend shizzlin dizzle nulla that's the shizzle metus. Maecenas feugizzle black velit. Quisque nizzle gizzle, nonummy sizzle, black izzle, bibendum shit, mammasay mammasa mamma oo sa. Doggy iaculis, ligula vizzle sure hendrerizzle, velizzle nibh shiznit nisl, shiz tempizzle mofo lorizzle check out this pot augue. Shiznit uhuh ... yih! crazy fizzle odio bizzle dignissizzle. cool tempor justo. Nam vehicula hendrerizzle black. Ass vehicula. Uhuh ... yih! placerat fo shizzle my nizzle stuff mi. Etizzle owned. In crunk i'm in the shizzle dictumst. Shut the shizzle up izzle leo shizzle my nizzle crocodizzle sizzle dawg shut the shizzle up. Phasellizzle shizzlin dizzle check out this, for sure dang, fringilla a, ass nizzle, nisl. Morbi vel pizzle ut the bizzle break yo neck, yall fringilla.“</p>
+</div>
+
+</div>
+
+<div id="rightContent"><div class="content">
+<h2>Right Slide</h2> <br><br>
+<p>„Sizzle vitae tortizzle pimpin' break yo neck, yall ultricizzle ma nizzle. Cool convallizzle, fo shizzle stuff sheezy posuere, nulla lorem fo pede, a pot shit dolizzle mammasay mammasa mamma oo sa velizzle. Pellentesque you son of a bizzle diam nizzle gangster varius hizzle. Curabitizzle turpis fo shizzle, pulvinar crunk, fo eleifend, tincidunt in, crazy. Nunc things mammasay mammasa mamma oo sa. Izzle ipsizzle dolor sizzle fizzle, consectetuer i'm in the shizzle elizzle. Yo izzle elit. Its fo rizzle shit. Vestibulum owned erizzle vitae izzle shiz mofo. In yo mamma nisi sit amizzle nibh. Uhuh ... yih! commodo. Away eu ante fo shizzle my nizzle lacinia tellivizzle. Mammasay mammasa mamma oo sa doggy massa fo shizzle urna pharetra lobortizzle. Fizzle the bizzle gizzle, bibendizzle pulvinar, ornare that's the shizzle, imperdizzle bling bling, lacus. Check it out egizzle dizzle izzle gizzle adipiscing tempor. Get down get down yo mamma nisl bizzle tellus ornare nonummy.“</p>
+</div>
+</div>
+
+<div id="bottomContent"><div class="content">
+<h2>Bottom Slide</h2> <br><br>
+<p>„Dizzle ut dolizzle. Owned magna shiznit, dignissizzle hizzle amet, fringilla dang, brizzle nizzle, phat. Away black nisi. Fizzle shut the shizzle up that's the shizzle et risus. Suspendisse dope. Crizzle fo shizzle my nizzle doggy fo. My shizz check out this ultrices purizzle. Fo shizzle dolor libero, get down get down interdizzle, posuere owned, bizzle , break yo neck, yall. Suspendisse doggy tellizzle. Aenizzle aliquizzle tellivizzle sit gizzle bizzle. Fusce dapibizzle gizzle own yo' nizzle. Bling bling ipsum dolizzle crunk yippiyo, consectetuer da bomb elizzle. Suspendisse boofron check out this, daahng dawg laorizzle, mammasay mammasa mamma oo sa izzle, boofron nizzle, that's the shizzle. Nam fo rutrizzle i'm in the shizzle.“</p>
+</div>
+</div>
+</body>
+</html>
