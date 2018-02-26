@@ -2,6 +2,7 @@
 Simple "OnePageSliderEffect" Design/Engine with Javascript (jQuery)
 
 For Demo visit http://waynedesigns.de/webpages/OnePageSliderEngine
+
 It is possible to add a lot more slides and different effects.
 
 
